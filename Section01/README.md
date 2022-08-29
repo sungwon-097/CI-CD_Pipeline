@@ -18,6 +18,7 @@
 ### Cloud Native Architecture
 
 -   클라우드 인프라 환경에서 운용되기 위한 어플리케이션 또는 서비스를 최적의 상태로 유지하고 사용 할 수 있도록 해 주는 Architecture
+    ![img](/Section01/img_src/CNA.png)
 
 ### Cloud Native Application
 
@@ -33,5 +34,34 @@
 ### Cloud Native - CI/CD
 
 -   개발자 및 팀에 의하여 개발된 결과물에 대해 지속적인 통합과 배포를 하는 프로세스
--   CI(Continuous Integration) : 작업된 코드에 컴파일, 테스트, 패키징 작업
--   CD(Continuous Delivery)
+-   CI(Continuous Integration) : 작업된 코드에 컴파일, 테스트, 패키징 작업(Build, Test, Merge 자동화로 인해 코드의 품질이 올라감)
+-   CD : 지속적인 배포와 제공
+    -   Continuous Delivery : CI에서 통합된 데이터를 검증하고 최종 배포를 수동으로
+    -   Continuous Deployment : 자동으로 전 과정을 배포
+
+> 수많은 서버를 수동으로 관리하다보면 개발 이외의 시간에 할애를 많이 하게 되어 비효율적(CI/CD는 MSA 개발에 중요한 구성 요소)
+
+### CI/CD Flow
+
+1. Git push
+2. Jenkins : CI/CD 자동화  
+    2-1. Maven or Gradle : Build tools  
+   // CI
+3. Docker : Container Runtime
+4. kubernetes : Docker container의 배포 관리(컴퓨터 시스템과 애플리케이션, 서비스의 자동화된 설정, 관리, 조정하는 Ochestration 도구)
+5. AWS, NCP  
+   // CD
+
+![img](/Section01/img_src/CICD.png)
+
+### Jenkins
+
+-   지속적인 통합과 배포 -> Work Flow를 제어(CI/CD)
+-   다양한 Plugins 연동이 가능하다
+    -   Maven, Gradle
+    -   VCM or SCM(git, bitbucket)
+    -   Java, Python, Nodejs
+
+![img](/Section01/img_src/JENKINS.png)
+
+: Development -> User Acceptance Testing -> Production
