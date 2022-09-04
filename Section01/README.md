@@ -65,3 +65,20 @@
 ![img](/Section01/img_src/JENKINS.png)
 
 : Development -> User Acceptance Testing -> Production
+
+### Install Jenkins
+
+1. https://www.jenkins.io/download/ 에서 개발환경에 맞는 버전을 Download(강의에선 Docker 환경을 사용)
+
+2. 아래 명령을 통해 Jenkins 컨테이너를 실행하고 확인(--name 옵션을 주지 않으면 docker가 랜덤하게 이름을 부여하여 컨테이너의 이름을 설정함)
+
+    - $ docker run -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure jenkins/jenkins:lts-jdk11
+    - $ docker images
+
+3. 명령입력 후 password를 찾아 기억해둠
+
+    - Please use the following password to proceed to installation: 아래에 password 존재
+
+4. 주소창에 http://localhost:8080 입력 후 접속, plugin 설치 및 설정
+
+5. Jenkins 관리 / Global Tool Configuration 에서 JDK 설정
