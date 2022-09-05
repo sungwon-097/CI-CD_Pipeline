@@ -37,7 +37,8 @@
 ### 실습 4-1
 
 ```cmd
-(local)$ docker run --privileged --name deploy-server -itd -p 10022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host edowon0623/docker-server:m1 /usr/sbin/init
+(local)$ docker run --privileged --name deploy-server -itd -p 10022:22 -p 8081:8080 -e container=docker -v /sys/fs/cgroup:/sys/fs/cgroup:rw 
+--cgroupns=host edowon0623/docker-server:m1 /usr/sbin/init
 // --privileged 로 root 권한 획득, 10022:22 -> container 내부의 ssh 서버는 22번 local환경에선 충돌을 막기 위해 10022를 사용해 접속함(portforwarding)
 
 (local)$ ssh root@localhost -p 10022
